@@ -1,0 +1,116 @@
+.about-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.about-page__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-page__title {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--color-text), var(--color-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-section {
+  padding: 2rem;
+  border-radius: 1.25rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.about-section__icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-section h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
+}
+
+.about-section p {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  font-size: 0.9375rem;
+}
+
+.about-languages-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.about-language-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 2rem;
+  background: var(--color-hover);
+  font-size: 0.8125rem;
+}
+
+.about-language-badge__flag {
+  font-size: 1rem;
+}
+
+.about-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.about-service {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: var(--color-hover);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.about-service__icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.about-service strong {
+  color: var(--color-text);
+  font-size: 0.875rem;
+}
+
+.about-disclaimer {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .about-page { padding: 2rem 1rem; }
+  .about-services-grid { grid-template-columns: 1fr; }
+}

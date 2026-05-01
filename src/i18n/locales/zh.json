@@ -1,0 +1,201 @@
+{
+  "app": {
+    "title": "选举助手",
+    "subtitle": "您的公民教育助手",
+    "tagline": "以8种语言赋能知情选民",
+    "footer": "© 2026 选举助手。为公民赋能而构建。",
+    "poweredBy": "由 Google Gemini AI 驱动"
+  },
+  "nav": {
+    "home": "首页",
+    "chat": "聊天",
+    "timeline": "选举时间线",
+    "checklist": "选民清单",
+    "about": "关于"
+  },
+  "home": {
+    "hero": {
+      "title": "您的民主进程指南",
+      "description": "用您喜欢的语言获取选举问题的答案。借助AI辅助了解投票、候选人和民主进程。",
+      "cta": "开始聊天",
+      "secondaryCta": "查看选举时间线"
+    },
+    "features": {
+      "title": "选举助手如何帮助您",
+      "chat": {
+        "title": "AI聊天",
+        "description": "用8种支持的语言中的任何一种询问有关选举、投票权和民主进程的问题。"
+      },
+      "timeline": {
+        "title": "选举时间线",
+        "description": "了解从选民登记到就职的选举过程的每个阶段。"
+      },
+      "checklist": {
+        "title": "选民清单",
+        "description": "使用个性化的互动清单跟踪您的选民准备情况。"
+      },
+      "multilingual": {
+        "title": "8种语言",
+        "description": "全面支持英语、印地语、西班牙语、法语、阿拉伯语、孟加拉语、葡萄牙语和普通话。"
+      }
+    }
+  },
+  "chat": {
+    "title": "与选举助手聊天",
+    "placeholder": "问我任何关于选举的问题...",
+    "send": "发送",
+    "thinking": "思考中...",
+    "welcome": "你好！我是选举助手，您的公民教育助手。问我任何关于选举、投票和民主进程的问题！",
+    "error": "抱歉，遇到了错误。请再试一次。",
+    "offTopic": "感谢您的问题，但我是为帮助选举和公民教育主题而设计的。您能问我关于投票、选举或民主进程的问题吗？",
+    "translatedBy": "由Google翻译",
+    "quickChips": {
+      "howToRegister": "我如何登记投票？",
+      "whatIsElectoralCollege": "什么是选举人团？",
+      "votingRights": "我的投票权是什么？",
+      "electionDay": "选举日会发生什么？",
+      "absenteeBallot": "缺席选票如何运作？",
+      "primaryVsCaucus": "初选和党团会议有什么区别？"
+    }
+  },
+  "timeline": {
+    "title": "选举时间线",
+    "subtitle": "了解从候选人宣布到就职的历程",
+    "stages": {
+      "announcement": {
+        "title": "候选人宣布",
+        "period": "选举前1-2年",
+        "description": "候选人正式宣布参选意向。",
+        "details": "在此阶段，候选人向联邦选举委员会提交正式文件。"
+      },
+      "primaries": {
+        "title": "初选和党团会议",
+        "period": "选举年2月-6月",
+        "description": "各州选民通过初选或党团会议选择他们的首选候选人。",
+        "details": "初选是由州政府主办的选举，选民投下秘密选票。"
+      },
+      "conventions": {
+        "title": "全国代表大会",
+        "period": "选举年7月-8月",
+        "description": "每个主要政党举行全国代表大会，正式提名其总统候选人。",
+        "details": "各州代表投票正式提名总统候选人。"
+      },
+      "generalCampaign": {
+        "title": "大选竞选活动",
+        "period": "选举年9月-11月",
+        "description": "被提名的候选人在全国各地竞选，参加辩论。",
+        "details": "总统辩论由总统辩论委员会组织。"
+      },
+      "electionDay": {
+        "title": "选举日",
+        "period": "11月1日后的第一个星期二",
+        "description": "公民在全国各地的投票站投票。",
+        "details": "投票站在各州规定的特定时间开放。"
+      },
+      "electoralVote": {
+        "title": "选举人团投票",
+        "period": "选举年12月",
+        "description": "各州选举人正式投票选举总统和副总统。",
+        "details": "候选人需要538张选举人票中的270张才能获胜。"
+      },
+      "certification": {
+        "title": "国会认证",
+        "period": "次年1月6日",
+        "description": "国会召开联合会议，计票并认证选举人票。",
+        "details": "副总统主持联合会议。"
+      },
+      "inauguration": {
+        "title": "就职典礼",
+        "period": "次年1月20日",
+        "description": "新当选的总统宣誓就职并开始任期。",
+        "details": "最高法院首席大法官主持宣誓仪式。"
+      }
+    },
+    "expandBtn": "了解更多",
+    "collapseBtn": "收起"
+  },
+  "checklist": {
+    "title": "选民准备清单",
+    "subtitle": "确保您已准备好投票。在下方跟踪您的进度。",
+    "progress": "已完成 {{completed}}/{{total}}",
+    "items": {
+      "registration": {
+        "title": "登记投票",
+        "description": "检查您的选民登记状态或首次登记。"
+      },
+      "id": {
+        "title": "验证您的身份证件",
+        "description": "确保您拥有您所在州接受的有效身份证明。"
+      },
+      "pollingPlace": {
+        "title": "查找您的投票站",
+        "description": "查找您指定的投票地点。"
+      },
+      "researchCandidates": {
+        "title": "研究候选人",
+        "description": "了解您将要投票的候选人和选票措施。"
+      },
+      "absentee": {
+        "title": "申请缺席选票",
+        "description": "如果无法亲自投票，请在截止日期前申请邮寄选票。"
+      },
+      "sampleBallot": {
+        "title": "查看样本选票",
+        "description": "熟悉选票格式。"
+      },
+      "transportPlan": {
+        "title": "计划交通方式",
+        "description": "确定如何到达投票站。"
+      },
+      "voteReminder": {
+        "title": "设置投票提醒",
+        "description": "为登记截止日期和选举日设置日历提醒。"
+      }
+    },
+    "resetBtn": "重置清单"
+  },
+  "about": {
+    "title": "关于选举助手",
+    "mission": {
+      "title": "我们的使命",
+      "description": "选举助手是一个多语言公民教育助手，旨在帮助选民了解民主进程。"
+    },
+    "technology": {
+      "title": "技术",
+      "description": "使用Google Gemini AI进行智能对话，Google Translate API进行实时翻译。"
+    },
+    "languages": {
+      "title": "支持的语言",
+      "description": "选举助手支持8种语言，以覆盖不同社区。"
+    },
+    "disclaimer": "选举助手仅提供教育信息。请始终向当地选举机构核实官方选举信息。",
+    "services": {
+      "title": "Google 服务",
+      "gemini": "智能聊天回复",
+      "translate": "实时回复翻译",
+      "fonts": "Noto字体系列支持所有文字",
+      "analytics": "使用和语言分析",
+      "cloudRun": "无服务器部署",
+      "cloudBuild": "CI/CD 流水线"
+    }
+  },
+  "theme": {
+    "light": "浅色模式",
+    "dark": "深色模式",
+    "toggle": "切换主题"
+  },
+  "language": {
+    "select": "选择语言",
+    "current": "中文"
+  },
+  "accessibility": {
+    "skipToContent": "跳转到主要内容",
+    "chatInput": "输入您的选举问题",
+    "sendMessage": "发送消息",
+    "newChat": "开始新对话",
+    "openMenu": "打开导航菜单",
+    "closeMenu": "关闭导航菜单",
+    "themeToggle": "切换深色模式",
+    "languageSelector": "选择您的首选语言"
+  }
+}

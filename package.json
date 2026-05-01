@@ -1,0 +1,27 @@
+{
+  "name": "election-guide-assistant",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.2",
+    "vite": "^8.0.10"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "dompurify": "^3.4.2",
+    "i18next": "^26.0.8",
+    "i18next-browser-languagedetector": "^8.2.1",
+    "i18next-http-backend": "^3.0.6",
+    "prop-types": "^15.8.1",
+    "react-i18next": "^17.0.6",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.14.2"
+  }
+}

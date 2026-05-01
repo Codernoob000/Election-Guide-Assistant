@@ -1,0 +1,201 @@
+{
+  "app": {
+    "title": "ElectionBot",
+    "subtitle": "Your Civic Education Assistant",
+    "tagline": "Empowering informed voters in 8 languages",
+    "footer": "© 2026 ElectionBot. Built for civic empowerment.",
+    "poweredBy": "Powered by Google Gemini AI"
+  },
+  "nav": {
+    "home": "Home",
+    "chat": "Chat",
+    "timeline": "Election Timeline",
+    "checklist": "Voter Checklist",
+    "about": "About"
+  },
+  "home": {
+    "hero": {
+      "title": "Your Guide to the Democratic Process",
+      "description": "Get answers to your election questions in your preferred language. Learn about voting, candidates, and the democratic process with AI-powered assistance.",
+      "cta": "Start Chatting",
+      "secondaryCta": "View Election Timeline"
+    },
+    "features": {
+      "title": "How ElectionBot Helps You",
+      "chat": {
+        "title": "AI-Powered Chat",
+        "description": "Ask questions about elections, voting rights, and the democratic process in any of 8 supported languages."
+      },
+      "timeline": {
+        "title": "Election Timeline",
+        "description": "Understand every stage of the election process from voter registration to inauguration."
+      },
+      "checklist": {
+        "title": "Voter Checklist",
+        "description": "Track your voter readiness with an interactive checklist personalized to your needs."
+      },
+      "multilingual": {
+        "title": "8 Languages",
+        "description": "Full support for English, Hindi, Spanish, French, Arabic, Bengali, Portuguese, and Mandarin."
+      }
+    }
+  },
+  "chat": {
+    "title": "Chat with ElectionBot",
+    "placeholder": "Ask me anything about elections...",
+    "send": "Send",
+    "thinking": "Thinking...",
+    "welcome": "Hello! I'm ElectionBot, your civic education assistant. Ask me anything about elections, voting, and the democratic process!",
+    "error": "Sorry, I encountered an error. Please try again.",
+    "offTopic": "I appreciate your question, but I'm designed to help with election and civic education topics. Could you ask me something about voting, elections, or the democratic process?",
+    "translatedBy": "Translated by Google",
+    "quickChips": {
+      "howToRegister": "How do I register to vote?",
+      "whatIsElectoralCollege": "What is the Electoral College?",
+      "votingRights": "What are my voting rights?",
+      "electionDay": "What happens on Election Day?",
+      "absenteeBallot": "How do absentee ballots work?",
+      "primaryVsCaucus": "What's the difference between a primary and a caucus?"
+    }
+  },
+  "timeline": {
+    "title": "Election Timeline",
+    "subtitle": "Understanding the journey from candidacy to inauguration",
+    "stages": {
+      "announcement": {
+        "title": "Candidate Announcement",
+        "period": "1-2 years before election",
+        "description": "Candidates formally announce their intention to run for office. They begin building campaign teams, raising funds, and establishing their platform on key issues.",
+        "details": "During this phase, candidates file official paperwork with the Federal Election Commission (FEC), form exploratory committees, and begin courting donors and supporters. Media coverage intensifies as the field of candidates takes shape."
+      },
+      "primaries": {
+        "title": "Primaries & Caucuses",
+        "period": "February - June of election year",
+        "description": "Voters in each state choose their preferred candidate through primary elections or caucuses. Delegates are awarded based on results.",
+        "details": "Primaries are state-run elections where voters cast secret ballots. Caucuses are local gatherings where participants openly show support. The Iowa caucuses and New Hampshire primary traditionally kick off the process. Candidates need a majority of delegates to secure the nomination."
+      },
+      "conventions": {
+        "title": "National Conventions",
+        "period": "July - August of election year",
+        "description": "Each major party holds a national convention to formally nominate their presidential candidate and adopt a party platform.",
+        "details": "Delegates from each state vote to officially nominate the presidential candidate. The candidate then selects a vice presidential running mate. The convention features speeches, platform adoption, and generates significant media attention."
+      },
+      "generalCampaign": {
+        "title": "General Election Campaign",
+        "period": "September - November of election year",
+        "description": "Nominated candidates campaign across the country, participate in debates, and work to win over voters in key battleground states.",
+        "details": "Presidential debates are organized by the Commission on Presidential Debates. Candidates focus on swing states where the outcome is uncertain. Campaign advertising, rallies, and grassroots organizing intensify as Election Day approaches."
+      },
+      "electionDay": {
+        "title": "Election Day",
+        "period": "First Tuesday after November 1",
+        "description": "Citizens cast their votes at polling places across the country. Some states also allow early voting and mail-in ballots.",
+        "details": "Polls are open for specified hours determined by each state. Voters may need to show identification depending on state laws. Results are reported throughout the evening as polls close across time zones."
+      },
+      "electoralVote": {
+        "title": "Electoral College Vote",
+        "period": "December of election year",
+        "description": "Electors from each state formally cast their votes for president and vice president based on the popular vote results in their state.",
+        "details": "Each state has a number of electors equal to its total congressional delegation. Most states use a winner-take-all system. A candidate needs 270 of 538 electoral votes to win. Electors meet in their respective state capitals."
+      },
+      "certification": {
+        "title": "Congressional Certification",
+        "period": "January 6 of the following year",
+        "description": "Congress meets in a joint session to count and certify the electoral votes, officially declaring the winner of the presidential election.",
+        "details": "The Vice President presides over the joint session. Electoral votes are counted state by state. Members of Congress can object to specific state results, requiring written objections from both a House member and a Senator."
+      },
+      "inauguration": {
+        "title": "Inauguration",
+        "period": "January 20 of the following year",
+        "description": "The newly elected president takes the oath of office and begins their term. The ceremony takes place at the U.S. Capitol.",
+        "details": "The Chief Justice of the Supreme Court administers the oath of office. The new president delivers an inaugural address outlining their vision and priorities. The ceremony includes prayers, musical performances, and a parade."
+      }
+    },
+    "expandBtn": "Learn More",
+    "collapseBtn": "Show Less"
+  },
+  "checklist": {
+    "title": "Voter Readiness Checklist",
+    "subtitle": "Make sure you're ready to vote. Track your progress below.",
+    "progress": "{{completed}} of {{total}} completed",
+    "items": {
+      "registration": {
+        "title": "Register to Vote",
+        "description": "Check your voter registration status or register for the first time at your state's election website."
+      },
+      "id": {
+        "title": "Verify Your ID",
+        "description": "Make sure you have a valid form of identification accepted by your state for voting purposes."
+      },
+      "pollingPlace": {
+        "title": "Find Your Polling Place",
+        "description": "Look up your designated polling location so you know exactly where to go on Election Day."
+      },
+      "researchCandidates": {
+        "title": "Research Candidates",
+        "description": "Learn about the candidates and ballot measures you'll be voting on. Review their positions on key issues."
+      },
+      "absentee": {
+        "title": "Request Absentee Ballot (if needed)",
+        "description": "If you can't vote in person, request an absentee or mail-in ballot before the deadline."
+      },
+      "sampleBallot": {
+        "title": "Review Sample Ballot",
+        "description": "Get familiar with the ballot format and all the races and measures that will appear."
+      },
+      "transportPlan": {
+        "title": "Plan Your Transportation",
+        "description": "Figure out how you'll get to your polling place. Many communities offer free rides on Election Day."
+      },
+      "voteReminder": {
+        "title": "Set a Voting Reminder",
+        "description": "Set calendar reminders for registration deadlines, early voting periods, and Election Day."
+      }
+    },
+    "resetBtn": "Reset Checklist"
+  },
+  "about": {
+    "title": "About ElectionBot",
+    "mission": {
+      "title": "Our Mission",
+      "description": "ElectionBot is a multilingual civic education assistant designed to help voters understand the democratic process. We believe that informed citizens are the foundation of a healthy democracy."
+    },
+    "technology": {
+      "title": "Technology",
+      "description": "Built with Google Gemini AI for intelligent conversation, Google Translate API for real-time translation, and modern web technologies for a seamless experience."
+    },
+    "languages": {
+      "title": "Supported Languages",
+      "description": "ElectionBot supports 8 languages to reach diverse communities: English, Hindi, Spanish, French, Arabic, Bengali, Portuguese, and Mandarin Chinese."
+    },
+    "disclaimer": "ElectionBot provides educational information only. Always verify official election information with your local election authority.",
+    "services": {
+      "title": "Google Services",
+      "gemini": "Intelligent chat responses",
+      "translate": "Real-time response translation",
+      "fonts": "Noto font family for all scripts",
+      "analytics": "Usage and language analytics",
+      "cloudRun": "Serverless deployment",
+      "cloudBuild": "CI/CD pipeline"
+    }
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode",
+    "toggle": "Toggle theme"
+  },
+  "language": {
+    "select": "Select Language",
+    "current": "English"
+  },
+  "accessibility": {
+    "skipToContent": "Skip to main content",
+    "chatInput": "Type your election question",
+    "sendMessage": "Send message",
+    "newChat": "Start new conversation",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "themeToggle": "Toggle dark mode",
+    "languageSelector": "Select your preferred language"
+  }
+}

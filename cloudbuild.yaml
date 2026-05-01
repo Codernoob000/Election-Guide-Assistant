@@ -1,0 +1,27 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '--build-arg=VITE_GEMINI_API_KEY=${_VITE_GEMINI_API_KEY}'
+      - '--build-arg=VITE_GOOGLE_TRANSLATE_API_KEY=${_VITE_GOOGLE_TRANSLATE_API_KEY}'
+      - '--build-arg=VITE_GA_MEASUREMENT_ID=${_VITE_GA_MEASUREMENT_ID}'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/election-guide'
+      - '.'
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/election-guide']
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'election-guide'
+      - '--image=gcr.io/$PROJECT_ID/election-guide'
+      - '--region=us-central1'
+      - '--platform=managed'
+      - '--allow-unauthenticated'
+      - '--port=8080'
+substitutions:
+  _VITE_GEMINI_API_KEY: ''
+  _VITE_GOOGLE_TRANSLATE_API_KEY: ''
+  _VITE_GA_MEASUREMENT_ID: ''

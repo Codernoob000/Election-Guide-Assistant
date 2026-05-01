@@ -1,0 +1,201 @@
+{
+  "app": {
+    "title": "ElectionBot",
+    "subtitle": "Seu Assistente de Educação Cívica",
+    "tagline": "Capacitando eleitores informados em 8 idiomas",
+    "footer": "© 2026 ElectionBot. Construído para o empoderamento cívico.",
+    "poweredBy": "Desenvolvido com Google Gemini AI"
+  },
+  "nav": {
+    "home": "Início",
+    "chat": "Chat",
+    "timeline": "Cronologia Eleitoral",
+    "checklist": "Lista de Verificação",
+    "about": "Sobre"
+  },
+  "home": {
+    "hero": {
+      "title": "Seu Guia para o Processo Democrático",
+      "description": "Obtenha respostas para suas perguntas eleitorais no seu idioma preferido. Aprenda sobre votação, candidatos e o processo democrático com assistência de IA.",
+      "cta": "Começar a Conversar",
+      "secondaryCta": "Ver Cronologia Eleitoral"
+    },
+    "features": {
+      "title": "Como o ElectionBot Ajuda Você",
+      "chat": {
+        "title": "Chat com IA",
+        "description": "Faça perguntas sobre eleições, direitos de voto e o processo democrático em qualquer um dos 8 idiomas suportados."
+      },
+      "timeline": {
+        "title": "Cronologia Eleitoral",
+        "description": "Entenda cada etapa do processo eleitoral, do registro de eleitores à posse."
+      },
+      "checklist": {
+        "title": "Lista do Eleitor",
+        "description": "Acompanhe sua preparação como eleitor com uma lista interativa personalizada."
+      },
+      "multilingual": {
+        "title": "8 Idiomas",
+        "description": "Suporte completo para inglês, hindi, espanhol, francês, árabe, bengali, português e mandarim."
+      }
+    }
+  },
+  "chat": {
+    "title": "Converse com o ElectionBot",
+    "placeholder": "Pergunte-me qualquer coisa sobre eleições...",
+    "send": "Enviar",
+    "thinking": "Pensando...",
+    "welcome": "Olá! Sou o ElectionBot, seu assistente de educação cívica. Pergunte-me qualquer coisa sobre eleições, votação e o processo democrático!",
+    "error": "Desculpe, encontrei um erro. Por favor, tente novamente.",
+    "offTopic": "Agradeço sua pergunta, mas fui projetado para ajudar com temas de educação cívica e eleitoral. Poderia me perguntar algo sobre votação, eleições ou o processo democrático?",
+    "translatedBy": "Traduzido pelo Google",
+    "quickChips": {
+      "howToRegister": "Como me registro para votar?",
+      "whatIsElectoralCollege": "O que é o Colégio Eleitoral?",
+      "votingRights": "Quais são meus direitos de voto?",
+      "electionDay": "O que acontece no dia da eleição?",
+      "absenteeBallot": "Como funcionam as cédulas de voto por correspondência?",
+      "primaryVsCaucus": "Qual a diferença entre primária e caucus?"
+    }
+  },
+  "timeline": {
+    "title": "Cronologia Eleitoral",
+    "subtitle": "Entendendo a jornada da candidatura à posse",
+    "stages": {
+      "announcement": {
+        "title": "Anúncio de Candidatura",
+        "period": "1-2 anos antes da eleição",
+        "description": "Candidatos anunciam formalmente sua intenção de concorrer ao cargo.",
+        "details": "Durante esta fase, candidatos registram documentação oficial na Comissão Eleitoral Federal."
+      },
+      "primaries": {
+        "title": "Primárias e Caucus",
+        "period": "Fevereiro - junho do ano eleitoral",
+        "description": "Eleitores em cada estado escolhem seu candidato preferido por meio de primárias ou caucus.",
+        "details": "Primárias são eleições conduzidas pelo estado onde eleitores votam em cédulas secretas."
+      },
+      "conventions": {
+        "title": "Convenções Nacionais",
+        "period": "Julho - agosto do ano eleitoral",
+        "description": "Cada partido realiza uma convenção nacional para nomear formalmente seu candidato presidencial.",
+        "details": "Delegados de cada estado votam para nomear oficialmente o candidato presidencial."
+      },
+      "generalCampaign": {
+        "title": "Campanha Eleitoral Geral",
+        "period": "Setembro - novembro do ano eleitoral",
+        "description": "Candidatos nomeados fazem campanha pelo país e participam de debates.",
+        "details": "Os debates presidenciais são organizados pela Comissão de Debates Presidenciais."
+      },
+      "electionDay": {
+        "title": "Dia da Eleição",
+        "period": "Primeira terça-feira após 1º de novembro",
+        "description": "Cidadãos votam em locais de votação por todo o país.",
+        "details": "Locais de votação ficam abertos em horários específicos determinados por cada estado."
+      },
+      "electoralVote": {
+        "title": "Voto do Colégio Eleitoral",
+        "period": "Dezembro do ano eleitoral",
+        "description": "Eleitores de cada estado votam formalmente para presidente e vice-presidente.",
+        "details": "Um candidato precisa de 270 dos 538 votos eleitorais para vencer."
+      },
+      "certification": {
+        "title": "Certificação do Congresso",
+        "period": "6 de janeiro do ano seguinte",
+        "description": "O Congresso se reúne em sessão conjunta para contar e certificar os votos eleitorais.",
+        "details": "O Vice-Presidente preside a sessão conjunta."
+      },
+      "inauguration": {
+        "title": "Posse",
+        "period": "20 de janeiro do ano seguinte",
+        "description": "O presidente recém-eleito toma posse e inicia seu mandato.",
+        "details": "O Presidente da Suprema Corte administra o juramento."
+      }
+    },
+    "expandBtn": "Saiba Mais",
+    "collapseBtn": "Mostrar Menos"
+  },
+  "checklist": {
+    "title": "Lista de Verificação do Eleitor",
+    "subtitle": "Certifique-se de que está pronto para votar. Acompanhe seu progresso abaixo.",
+    "progress": "{{completed}} de {{total}} concluídos",
+    "items": {
+      "registration": {
+        "title": "Registrar-se para Votar",
+        "description": "Verifique seu status de registro eleitoral ou registre-se pela primeira vez."
+      },
+      "id": {
+        "title": "Verificar sua Identificação",
+        "description": "Certifique-se de ter uma identificação válida aceita para votação."
+      },
+      "pollingPlace": {
+        "title": "Encontrar seu Local de Votação",
+        "description": "Encontre seu local de votação designado."
+      },
+      "researchCandidates": {
+        "title": "Pesquisar Candidatos",
+        "description": "Conheça os candidatos e medidas em que você votará."
+      },
+      "absentee": {
+        "title": "Solicitar Cédula por Correspondência",
+        "description": "Se não puder votar pessoalmente, solicite uma cédula por correspondência."
+      },
+      "sampleBallot": {
+        "title": "Revisar Cédula de Exemplo",
+        "description": "Familiarize-se com o formato da cédula."
+      },
+      "transportPlan": {
+        "title": "Planejar seu Transporte",
+        "description": "Determine como chegará ao seu local de votação."
+      },
+      "voteReminder": {
+        "title": "Definir Lembrete de Votação",
+        "description": "Configure lembretes para prazos de registro e dia da eleição."
+      }
+    },
+    "resetBtn": "Redefinir Lista"
+  },
+  "about": {
+    "title": "Sobre o ElectionBot",
+    "mission": {
+      "title": "Nossa Missão",
+      "description": "ElectionBot é um assistente multilíngue de educação cívica projetado para ajudar eleitores a entender o processo democrático."
+    },
+    "technology": {
+      "title": "Tecnologia",
+      "description": "Construído com Google Gemini AI para conversação inteligente e Google Translate API para tradução em tempo real."
+    },
+    "languages": {
+      "title": "Idiomas Suportados",
+      "description": "ElectionBot suporta 8 idiomas para alcançar comunidades diversas."
+    },
+    "disclaimer": "ElectionBot fornece apenas informações educacionais. Sempre verifique informações eleitorais oficiais com sua autoridade eleitoral local.",
+    "services": {
+      "title": "Serviços Google",
+      "gemini": "Respostas inteligentes de chat",
+      "translate": "Tradução de respostas em tempo real",
+      "fonts": "Família de fontes Noto para todos os scripts",
+      "analytics": "Análise de uso e idioma",
+      "cloudRun": "Implantação sem servidor",
+      "cloudBuild": "Pipeline CI/CD"
+    }
+  },
+  "theme": {
+    "light": "Modo Claro",
+    "dark": "Modo Escuro",
+    "toggle": "Alternar tema"
+  },
+  "language": {
+    "select": "Selecionar Idioma",
+    "current": "Português"
+  },
+  "accessibility": {
+    "skipToContent": "Pular para o conteúdo principal",
+    "chatInput": "Digite sua pergunta eleitoral",
+    "sendMessage": "Enviar mensagem",
+    "newChat": "Iniciar nova conversa",
+    "openMenu": "Abrir menu de navegação",
+    "closeMenu": "Fechar menu de navegação",
+    "themeToggle": "Alternar modo escuro",
+    "languageSelector": "Selecione seu idioma preferido"
+  }
+}

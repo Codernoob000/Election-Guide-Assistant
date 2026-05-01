@@ -1,0 +1,201 @@
+{
+  "app": {
+    "title": "ElectionBot",
+    "subtitle": "Votre Assistant d'Éducation Civique",
+    "tagline": "Autonomiser les électeurs informés dans 8 langues",
+    "footer": "© 2026 ElectionBot. Construit pour l'autonomisation civique.",
+    "poweredBy": "Propulsé par Google Gemini AI"
+  },
+  "nav": {
+    "home": "Accueil",
+    "chat": "Discussion",
+    "timeline": "Chronologie Électorale",
+    "checklist": "Liste de Contrôle",
+    "about": "À Propos"
+  },
+  "home": {
+    "hero": {
+      "title": "Votre Guide du Processus Démocratique",
+      "description": "Obtenez des réponses à vos questions électorales dans votre langue préférée. Apprenez sur le vote, les candidats et le processus démocratique avec l'assistance IA.",
+      "cta": "Commencer à Discuter",
+      "secondaryCta": "Voir la Chronologie Électorale"
+    },
+    "features": {
+      "title": "Comment ElectionBot Vous Aide",
+      "chat": {
+        "title": "Discussion IA",
+        "description": "Posez des questions sur les élections, les droits de vote et le processus démocratique dans l'une des 8 langues prises en charge."
+      },
+      "timeline": {
+        "title": "Chronologie Électorale",
+        "description": "Comprenez chaque étape du processus électoral, de l'inscription des électeurs à l'investiture."
+      },
+      "checklist": {
+        "title": "Liste du Votant",
+        "description": "Suivez votre préparation d'électeur avec une liste interactive personnalisée selon vos besoins."
+      },
+      "multilingual": {
+        "title": "8 Langues",
+        "description": "Support complet pour l'anglais, l'hindi, l'espagnol, le français, l'arabe, le bengali, le portugais et le mandarin."
+      }
+    }
+  },
+  "chat": {
+    "title": "Discuter avec ElectionBot",
+    "placeholder": "Posez-moi n'importe quelle question sur les élections...",
+    "send": "Envoyer",
+    "thinking": "Réflexion...",
+    "welcome": "Bonjour ! Je suis ElectionBot, votre assistant d'éducation civique. Posez-moi n'importe quelle question sur les élections, le vote et le processus démocratique !",
+    "error": "Désolé, j'ai rencontré une erreur. Veuillez réessayer.",
+    "offTopic": "J'apprécie votre question, mais je suis conçu pour aider avec les sujets d'éducation civique et électorale. Pourriez-vous me poser une question sur le vote, les élections ou le processus démocratique ?",
+    "translatedBy": "Traduit par Google",
+    "quickChips": {
+      "howToRegister": "Comment m'inscrire pour voter ?",
+      "whatIsElectoralCollege": "Qu'est-ce que le Collège Électoral ?",
+      "votingRights": "Quels sont mes droits de vote ?",
+      "electionDay": "Que se passe-t-il le jour de l'élection ?",
+      "absenteeBallot": "Comment fonctionnent les votes par correspondance ?",
+      "primaryVsCaucus": "Quelle est la différence entre une primaire et un caucus ?"
+    }
+  },
+  "timeline": {
+    "title": "Chronologie Électorale",
+    "subtitle": "Comprendre le parcours de la candidature à l'investiture",
+    "stages": {
+      "announcement": {
+        "title": "Annonce de Candidature",
+        "period": "1 à 2 ans avant l'élection",
+        "description": "Les candidats annoncent formellement leur intention de se présenter. Ils commencent à constituer des équipes de campagne, à collecter des fonds et à établir leur programme.",
+        "details": "Pendant cette phase, les candidats déposent des documents officiels auprès de la Commission Électorale Fédérale (FEC), forment des comités exploratoires et commencent à courtiser les donateurs et les partisans."
+      },
+      "primaries": {
+        "title": "Primaires et Caucus",
+        "period": "Février - juin de l'année électorale",
+        "description": "Les électeurs de chaque État choisissent leur candidat préféré par le biais d'élections primaires ou de caucus. Les délégués sont attribués selon les résultats.",
+        "details": "Les primaires sont des élections organisées par l'État où les électeurs votent par bulletin secret. Les caucus sont des rassemblements locaux où les participants montrent ouvertement leur soutien."
+      },
+      "conventions": {
+        "title": "Conventions Nationales",
+        "period": "Juillet - août de l'année électorale",
+        "description": "Chaque grand parti organise une convention nationale pour nominer formellement son candidat à la présidence et adopter un programme de parti.",
+        "details": "Les délégués de chaque État votent pour nominer officiellement le candidat présidentiel. Le candidat sélectionne ensuite un colistier vice-présidentiel."
+      },
+      "generalCampaign": {
+        "title": "Campagne Électorale Générale",
+        "period": "Septembre - novembre de l'année électorale",
+        "description": "Les candidats nominés font campagne à travers le pays, participent aux débats et s'efforcent de convaincre les électeurs dans les États clés.",
+        "details": "Les débats présidentiels sont organisés par la Commission des Débats Présidentiels. Les candidats se concentrent sur les États indécis."
+      },
+      "electionDay": {
+        "title": "Jour de l'Élection",
+        "period": "Premier mardi après le 1er novembre",
+        "description": "Les citoyens votent dans les bureaux de vote à travers le pays. Certains États permettent également le vote anticipé et le vote par correspondance.",
+        "details": "Les bureaux de vote sont ouverts pendant des heures spécifiques déterminées par chaque État."
+      },
+      "electoralVote": {
+        "title": "Vote du Collège Électoral",
+        "period": "Décembre de l'année électorale",
+        "description": "Les électeurs de chaque État votent formellement pour le président et le vice-président selon les résultats du vote populaire dans leur État.",
+        "details": "Chaque État a un nombre d'électeurs égal à sa délégation totale au Congrès. Un candidat a besoin de 270 des 538 votes électoraux pour gagner."
+      },
+      "certification": {
+        "title": "Certification du Congrès",
+        "period": "6 janvier de l'année suivante",
+        "description": "Le Congrès se réunit en session conjointe pour compter et certifier les votes électoraux, déclarant officiellement le vainqueur.",
+        "details": "Le Vice-Président préside la session conjointe. Les votes électoraux sont comptés État par État."
+      },
+      "inauguration": {
+        "title": "Investiture",
+        "period": "20 janvier de l'année suivante",
+        "description": "Le président nouvellement élu prête serment et commence son mandat. La cérémonie a lieu au Capitole des États-Unis.",
+        "details": "Le Président de la Cour Suprême administre le serment. Le nouveau président prononce un discours inaugural."
+      }
+    },
+    "expandBtn": "En Savoir Plus",
+    "collapseBtn": "Afficher Moins"
+  },
+  "checklist": {
+    "title": "Liste de Contrôle de l'Électeur",
+    "subtitle": "Assurez-vous d'être prêt à voter. Suivez votre progression ci-dessous.",
+    "progress": "{{completed}} sur {{total}} terminés",
+    "items": {
+      "registration": {
+        "title": "S'inscrire pour Voter",
+        "description": "Vérifiez votre statut d'inscription ou inscrivez-vous pour la première fois sur le site web électoral de votre État."
+      },
+      "id": {
+        "title": "Vérifier Votre Identité",
+        "description": "Assurez-vous d'avoir une pièce d'identité valide acceptée par votre État pour voter."
+      },
+      "pollingPlace": {
+        "title": "Trouver Votre Bureau de Vote",
+        "description": "Recherchez votre lieu de vote désigné pour savoir exactement où aller le jour de l'élection."
+      },
+      "researchCandidates": {
+        "title": "Rechercher les Candidats",
+        "description": "Renseignez-vous sur les candidats et les mesures du bulletin sur lesquels vous voterez."
+      },
+      "absentee": {
+        "title": "Demander un Vote par Correspondance (si nécessaire)",
+        "description": "Si vous ne pouvez pas voter en personne, demandez un bulletin de vote par correspondance avant la date limite."
+      },
+      "sampleBallot": {
+        "title": "Examiner un Bulletin Exemple",
+        "description": "Familiarisez-vous avec le format du bulletin et tous les scrutins et mesures qui y figureront."
+      },
+      "transportPlan": {
+        "title": "Planifier Votre Transport",
+        "description": "Déterminez comment vous vous rendrez à votre bureau de vote."
+      },
+      "voteReminder": {
+        "title": "Définir un Rappel de Vote",
+        "description": "Configurez des rappels de calendrier pour les dates limites d'inscription et le jour de l'élection."
+      }
+    },
+    "resetBtn": "Réinitialiser la Liste"
+  },
+  "about": {
+    "title": "À Propos d'ElectionBot",
+    "mission": {
+      "title": "Notre Mission",
+      "description": "ElectionBot est un assistant d'éducation civique multilingue conçu pour aider les électeurs à comprendre le processus démocratique."
+    },
+    "technology": {
+      "title": "Technologie",
+      "description": "Construit avec Google Gemini AI pour la conversation intelligente, Google Translate API pour la traduction en temps réel et les technologies web modernes."
+    },
+    "languages": {
+      "title": "Langues Prises en Charge",
+      "description": "ElectionBot prend en charge 8 langues : anglais, hindi, espagnol, français, arabe, bengali, portugais et mandarin chinois."
+    },
+    "disclaimer": "ElectionBot fournit uniquement des informations éducatives. Vérifiez toujours les informations électorales officielles auprès de votre autorité électorale locale.",
+    "services": {
+      "title": "Services Google",
+      "gemini": "Réponses de chat intelligentes",
+      "translate": "Traduction des réponses en temps réel",
+      "fonts": "Famille de polices Noto pour tous les scripts",
+      "analytics": "Analyse d'utilisation et de langue",
+      "cloudRun": "Déploiement sans serveur",
+      "cloudBuild": "Pipeline CI/CD"
+    }
+  },
+  "theme": {
+    "light": "Mode Clair",
+    "dark": "Mode Sombre",
+    "toggle": "Changer le thème"
+  },
+  "language": {
+    "select": "Choisir la Langue",
+    "current": "Français"
+  },
+  "accessibility": {
+    "skipToContent": "Aller au contenu principal",
+    "chatInput": "Tapez votre question électorale",
+    "sendMessage": "Envoyer le message",
+    "newChat": "Démarrer une nouvelle conversation",
+    "openMenu": "Ouvrir le menu de navigation",
+    "closeMenu": "Fermer le menu de navigation",
+    "themeToggle": "Basculer le mode sombre",
+    "languageSelector": "Sélectionnez votre langue préférée"
+  }
+}
