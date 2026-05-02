@@ -1,7 +1,7 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci
+RUN npm install
 COPY . .
 ARG VITE_GEMINI_API_KEY
 ARG VITE_GOOGLE_TRANSLATE_API_KEY

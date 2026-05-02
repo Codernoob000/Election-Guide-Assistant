@@ -173,6 +173,33 @@ gcloud builds submit --config=cloudbuild.yaml \
 
 ---
 
+## 🧪 Testing
+
+Comprehensive test suite using **Vitest + React Testing Library + MSW**.
+
+### Commands
+
+| Command | Description |
+|---------|-------------|
+| `npm test` | Run all tests |
+| `npm run test:ui` | Visual test runner |
+| `npm run test:coverage` | Coverage report |
+
+### Test Files
+
+| File | What it covers |
+|------|----------------|
+| `geminiService.test.js` | Core paths, edge cases, integration for AI service |
+| `translateService.test.js` | Translation API, no-op for English, error fallbacks |
+| `ChatContext.test.jsx` | State management, error handling, sessionStorage |
+| `ElectionTimeline.test.jsx` | 8 stages, expand/collapse, data integration |
+| `VoterChecklist.test.jsx` | Checklist state, progress, persistence |
+| `LanguageSelector.test.jsx` | 8 languages, RTL, font switching, analytics |
+| `accessibility.test.jsx` | ARIA attributes, axe-core scans, semantic HTML |
+| `chatFlow.test.jsx` | Full chat pipeline integration scenarios |
+
+---
+
 ## 📄 License
 
 MIT License — see [LICENSE](LICENSE) for details.
