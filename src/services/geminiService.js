@@ -7,6 +7,11 @@
  */
 
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+
+if (!GEMINI_API_KEY) {
+  console.error('VITE_GEMINI_API_KEY is not defined');
+}
+
 const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent';
 
 const SYSTEM_PROMPT = `You are ElectionBot, a civic education assistant specializing in elections and democratic processes. 
