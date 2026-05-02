@@ -2,9 +2,14 @@ import { useTranslation } from 'react-i18next';
 import { SUPPORTED_LANGUAGES } from '../i18n';
 import './AboutPage.css';
 
+/**
+ * @description About page detailing the project mission and technology stack
+ * @returns {JSX.Element} AboutPage component
+ */
 export default function AboutPage() {
   const { t } = useTranslation();
 
+  // List of third-party services and APIs used in the project
   const services = [
     { icon: '🤖', name: 'Gemini AI', descKey: 'about.services.gemini' },
     { icon: '🌐', name: 'Google Translate API', descKey: 'about.services.translate' },
@@ -38,7 +43,7 @@ export default function AboutPage() {
           <h2>{t('about.languages.title')}</h2>
           <p>{t('about.languages.description')}</p>
           <div className="about-languages-grid">
-            {SUPPORTED_LANGUAGES.map((lang) => (
+            {SUPPORTED_LANGUAGES.map(lang => (
               <div key={lang.code} className="about-language-badge">
                 <span className="about-language-badge__flag">{lang.flag}</span>
                 <span className="about-language-badge__name">{lang.nativeName}</span>
@@ -51,7 +56,7 @@ export default function AboutPage() {
           <div className="about-section__icon">🔧</div>
           <h2>{t('about.services.title')}</h2>
           <div className="about-services-grid">
-            {services.map((svc) => (
+            {services.map(svc => (
               <div className="about-service" key={svc.descKey}>
                 <span className="about-service__icon">{svc.icon}</span>
                 <strong>{svc.name}</strong>
@@ -62,6 +67,7 @@ export default function AboutPage() {
         </section>
       </div>
 
+      {/* Non-partisan and informational disclaimer */}
       <div className="about-disclaimer">
         <p>{t('about.disclaimer')}</p>
       </div>

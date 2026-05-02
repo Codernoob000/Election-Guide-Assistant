@@ -6,10 +6,15 @@ let currentLanguage = 'en';
 
 vi.mock('react-i18next', () => ({
   useTranslation: () => ({
-    t: (key) => key,
+    t: key => key,
     i18n: {
-      get language() { return currentLanguage; },
-      changeLanguage: (code) => { currentLanguage = code; mockChangeLanguage(code); },
+      get language() {
+        return currentLanguage;
+      },
+      changeLanguage: code => {
+        currentLanguage = code;
+        mockChangeLanguage(code);
+      },
     },
   }),
 }));
@@ -21,14 +26,70 @@ vi.mock('../services/analyticsService', () => ({
 
 vi.mock('../i18n', () => ({
   SUPPORTED_LANGUAGES: [
-    { code: 'en', name: 'English', nativeName: 'English', flag: '\u{1F1FA}\u{1F1F8}', dir: 'ltr', font: 'Inter' },
-    { code: 'hi', name: 'Hindi', nativeName: '\u0939\u093F\u0902\u0926\u0940', flag: '\u{1F1EE}\u{1F1F3}', dir: 'ltr', font: 'Noto Sans Devanagari' },
-    { code: 'es', name: 'Spanish', nativeName: 'Espa\u00F1ol', flag: '\u{1F1EA}\u{1F1F8}', dir: 'ltr', font: 'Inter' },
-    { code: 'fr', name: 'French', nativeName: 'Fran\u00E7ais', flag: '\u{1F1EB}\u{1F1F7}', dir: 'ltr', font: 'Inter' },
-    { code: 'ar', name: 'Arabic', nativeName: '\u0627\u0644\u0639\u0631\u0628\u064A\u0629', flag: '\u{1F1F8}\u{1F1E6}', dir: 'rtl', font: 'Noto Sans Arabic' },
-    { code: 'bn', name: 'Bengali', nativeName: '\u09AC\u09BE\u0982\u09B2\u09BE', flag: '\u{1F1E7}\u{1F1E9}', dir: 'ltr', font: 'Noto Sans Bengali' },
-    { code: 'pt', name: 'Portuguese', nativeName: 'Portugu\u00EAs', flag: '\u{1F1E7}\u{1F1F7}', dir: 'ltr', font: 'Inter' },
-    { code: 'zh', name: 'Mandarin', nativeName: '\u4E2D\u6587', flag: '\u{1F1E8}\u{1F1F3}', dir: 'ltr', font: 'Noto Sans SC' },
+    {
+      code: 'en',
+      name: 'English',
+      nativeName: 'English',
+      flag: '\u{1F1FA}\u{1F1F8}',
+      dir: 'ltr',
+      font: 'Inter',
+    },
+    {
+      code: 'hi',
+      name: 'Hindi',
+      nativeName: '\u0939\u093F\u0902\u0926\u0940',
+      flag: '\u{1F1EE}\u{1F1F3}',
+      dir: 'ltr',
+      font: 'Noto Sans Devanagari',
+    },
+    {
+      code: 'es',
+      name: 'Spanish',
+      nativeName: 'Espa\u00F1ol',
+      flag: '\u{1F1EA}\u{1F1F8}',
+      dir: 'ltr',
+      font: 'Inter',
+    },
+    {
+      code: 'fr',
+      name: 'French',
+      nativeName: 'Fran\u00E7ais',
+      flag: '\u{1F1EB}\u{1F1F7}',
+      dir: 'ltr',
+      font: 'Inter',
+    },
+    {
+      code: 'ar',
+      name: 'Arabic',
+      nativeName: '\u0627\u0644\u0639\u0631\u0628\u064A\u0629',
+      flag: '\u{1F1F8}\u{1F1E6}',
+      dir: 'rtl',
+      font: 'Noto Sans Arabic',
+    },
+    {
+      code: 'bn',
+      name: 'Bengali',
+      nativeName: '\u09AC\u09BE\u0982\u09B2\u09BE',
+      flag: '\u{1F1E7}\u{1F1E9}',
+      dir: 'ltr',
+      font: 'Noto Sans Bengali',
+    },
+    {
+      code: 'pt',
+      name: 'Portuguese',
+      nativeName: 'Portugu\u00EAs',
+      flag: '\u{1F1E7}\u{1F1F7}',
+      dir: 'ltr',
+      font: 'Inter',
+    },
+    {
+      code: 'zh',
+      name: 'Mandarin',
+      nativeName: '\u4E2D\u6587',
+      flag: '\u{1F1E8}\u{1F1F3}',
+      dir: 'ltr',
+      font: 'Noto Sans SC',
+    },
   ],
   RTL_LANGUAGES: ['ar'],
 }));

@@ -155,5 +155,7 @@
 }
 
 @media (max-width: 768px) {
-  .checklist-page { padding: 2rem 1rem; }
+  .checklist-page {
+    padding: 2rem 1rem;
+  }
 }

@@ -22,9 +22,10 @@ describe('geminiService', () => {
   const mockSuccessResponse = (text = 'Test response') => {
     mockFetch.mockResolvedValueOnce({
       ok: true,
-      json: () => Promise.resolve({
-        candidates: [{ content: { parts: [{ text }] } }]
-      })
+      json: () =>
+        Promise.resolve({
+          candidates: [{ content: { parts: [{ text }] } }],
+        }),
     });
   };
 
@@ -40,7 +41,7 @@ describe('geminiService', () => {
       mockSuccessResponse();
       const history = [
         { role: 'user', text: 'Hello' },
-        { role: 'model', text: 'Hi there' }
+        { role: 'model', text: 'Hi there' },
       ];
       await sendMessageToGemini('Follow up', history);
       const body = JSON.parse(mockFetch.mock.calls[0][1].body);
@@ -69,7 +70,7 @@ describe('geminiService', () => {
     it('returns empty text when API returns empty candidates', async () => {
       mockFetch.mockResolvedValueOnce({
         ok: true,
-        json: () => Promise.resolve({ candidates: [] })
+        json: () => Promise.resolve({ candidates: [] }),
       });
       const result = await sendMessageToGemini('test');
       expect(result.text).toBe('');
@@ -84,7 +85,7 @@ describe('geminiService', () => {
       mockFetch.mockResolvedValueOnce({
         ok: false,
         status: 429,
-        json: () => Promise.resolve({ error: { message: 'Rate limit exceeded' } })
+        json: () => Promise.resolve({ error: { message: 'Rate limit exceeded' } }),
       });
       await expect(sendMessageToGemini('test')).rejects.toThrow('Rate limit exceeded');
     });
@@ -93,7 +94,7 @@ describe('geminiService', () => {
       mockFetch.mockResolvedValueOnce({
         ok: false,
         status: 500,
-        json: () => Promise.reject(new Error('parse error'))
+        json: () => Promise.reject(new Error('parse error')),
       });
       await expect(sendMessageToGemini('test')).rejects.toThrow('Gemini API error: 500');
     });
@@ -102,7 +103,9 @@ describe('geminiService', () => {
       vi.resetModules();
       delete import.meta.env.VITE_GEMINI_API_KEY;
       const mod = await import('../services/geminiService.js');
-      await expect(mod.sendMessageToGemini('test')).rejects.toThrow('Gemini API key not configured');
+      await expect(mod.sendMessageToGemini('test')).rejects.toThrow(
+        'Gemini API key not configured'
+      );
     });
   });
 
@@ -127,12 +130,15 @@ describe('geminiService', () => {
     it('response extracted correctly from real API shape', async () => {
       mockFetch.mockResolvedValueOnce({
         ok: true,
-        json: () => Promise.resolve({
-          candidates: [{
-            content: { parts: [{ text: 'Extracted text' }], role: 'model' },
-            finishReason: 'STOP'
-          }]
-        })
+        json: () =>
+          Promise.resolve({
+            candidates: [
+              {
+                content: { parts: [{ text: 'Extracted text' }], role: 'model' },
+                finishReason: 'STOP',
+              },
+            ],
+          }),
       });
       const result = await sendMessageToGemini('test');
       expect(result.text).toBe('Extracted text');
@@ -146,7 +152,7 @@ describe('geminiService', () => {
       mockSuccessResponse('Second response');
       const history = [
         { role: 'user', text: 'First question' },
-        { role: 'model', text: 'First response' }
+        { role: 'model', text: 'First response' },
       ];
       await sendMessageToGemini('Second question', history);
 

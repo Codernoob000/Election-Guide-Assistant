@@ -5,6 +5,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import { RTL_LANGUAGES, SUPPORTED_LANGUAGES } from './i18n';
 import { initGA, trackPageView } from './services/analyticsService';
 import Navbar from './components/Navbar';
+import ErrorBoundary from './components/ErrorBoundary';
 
 import './i18n';
 
@@ -41,7 +42,7 @@ function AppContent() {
     document.documentElement.setAttribute('lang', lang);
     document.documentElement.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
 
-    const langMeta = SUPPORTED_LANGUAGES.find((l) => l.code === lang);
+    const langMeta = SUPPORTED_LANGUAGES.find(l => l.code === lang);
     if (langMeta) {
       document.documentElement.style.setProperty('--font-family-script', langMeta.font);
     }
@@ -57,8 +58,22 @@ function AppContent() {
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/chat" element={<ChatPage />} />
-          <Route path="/timeline" element={<TimelinePage />} />
+          <Route
+            path="/chat"
+            element={
+              <ErrorBoundary>
+                <ChatPage />
+              </ErrorBoundary>
+            }
+          />
+          <Route
+            path="/timeline"
+            element={
+              <ErrorBoundary>
+                <TimelinePage />
+              </ErrorBoundary>
+            }
+          />
           <Route path="/checklist" element={<ChecklistPage />} />
           <Route path="/about" element={<AboutPage />} />
         </Routes>

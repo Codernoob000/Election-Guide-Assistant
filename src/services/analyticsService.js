@@ -6,11 +6,13 @@
 const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID;
 
 /**
- * Initialize Google Analytics
+ * @description Initialize Google Analytics script and dataLayer
+ * @returns {void}
  */
 export function initGA() {
   if (!GA_MEASUREMENT_ID) return;
 
+  // Dynamically load the Google Analytics script
   const script = document.createElement('script');
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
@@ -25,9 +27,10 @@ export function initGA() {
 }
 
 /**
- * Track a custom event
- * @param {string} eventName - Event name
- * @param {Object} params - Event parameters
+ * @description Track a custom event to GA4
+ * @param {string} eventName - The name of the event to track
+ * @param {Object} [params={}] - Additional event parameters
+ * @returns {void}
  */
 export function trackEvent(eventName, params = {}) {
   if (!GA_MEASUREMENT_ID || !window.gtag) return;
@@ -35,17 +38,19 @@ export function trackEvent(eventName, params = {}) {
 }
 
 /**
- * Track language change event
+ * @description Track when a user changes their interface language
  * @param {string} fromLang - Previous language code
  * @param {string} toLang - New language code
+ * @returns {void}
  */
 export function trackLanguageChange(fromLang, toLang) {
   trackEvent('language_change', { from: fromLang, to: toLang });
 }
 
 /**
- * Track page view
- * @param {string} pagePath - Page path
+ * @description Track a page view event
+ * @param {string} pagePath - The URL path of the page viewed
+ * @returns {void}
  */
 export function trackPageView(pagePath) {
   if (!GA_MEASUREMENT_ID || !window.gtag) return;

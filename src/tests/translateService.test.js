@@ -22,9 +22,10 @@ describe('translateService', () => {
   const mockTranslateResponse = (translatedText, detectedLang = 'en') => {
     mockFetch.mockResolvedValueOnce({
       ok: true,
-      json: () => Promise.resolve({
-        data: { translations: [{ translatedText, detectedSourceLanguage: detectedLang }] }
-      })
+      json: () =>
+        Promise.resolve({
+          data: { translations: [{ translatedText, detectedSourceLanguage: detectedLang }] },
+        }),
     });
   };
 
@@ -68,7 +69,7 @@ describe('translateService', () => {
       mockFetch.mockResolvedValueOnce({
         ok: false,
         status: 403,
-        json: () => Promise.resolve({ error: { message: 'Forbidden' } })
+        json: () => Promise.resolve({ error: { message: 'Forbidden' } }),
       });
       const result = await translateText('Hello', 'es');
       expect(result.translatedText).toBe('Hello');
@@ -83,7 +84,7 @@ describe('translateService', () => {
     it('falls back to original text on malformed JSON response', async () => {
       mockFetch.mockResolvedValueOnce({
         ok: true,
-        json: () => Promise.resolve({ unexpected: 'structure' })
+        json: () => Promise.resolve({ unexpected: 'structure' }),
       });
       const result = await translateText('Hello', 'es');
       expect(result.translatedText).toBe('Hello');

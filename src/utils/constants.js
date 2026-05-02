@@ -1,0 +1,12 @@
+export const MAX_MESSAGES = 20;
+export const SUPPORTED_LANGUAGES = ['en', 'es', 'fr', 'hi', 'zh', 'ar', 'pt', 'de'];
+export const RTL_LANGUAGES = ['ar'];
+export const NOTO_FONT_LANGUAGES = ['hi', 'ar', 'zh'];
+export const ELECTION_STAGES_COUNT = 8;
+export const CHECKLIST_ITEMS_COUNT = 8;
+export const SESSION_STORAGE_KEY = 'electionbot_conversation';
+export const LANGUAGE_STORAGE_KEY = 'electionbot_language';
+export const THEME_STORAGE_KEY = 'electionbot_theme';
+export const GEMINI_MODEL = 'gemini-flash-latest'; // Aligned with test expectations
+export const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models';
+export const TRANSLATE_API_URL = 'https://translation.googleapis.com/language/translate/v2';

@@ -1,12 +1,12 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen, fireEvent, cleanup } from '@testing-library/react';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import axe from 'axe-core';
 
 /* ── Global mocks ── */
 vi.mock('react-i18next', () => ({
   useTranslation: () => ({
-    t: (key) => key,
+    t: key => key,
     i18n: { language: 'en', changeLanguage: vi.fn() },
   }),
 }));
@@ -37,20 +37,55 @@ vi.mock('../services/analyticsService', () => ({
 vi.mock('../i18n', () => ({
   SUPPORTED_LANGUAGES: [
     { code: 'en', name: 'English', nativeName: 'English', flag: '🇺🇸', dir: 'ltr', font: 'Inter' },
-    { code: 'hi', name: 'Hindi', nativeName: 'हिंदी', flag: '🇮🇳', dir: 'ltr', font: 'Noto Sans Devanagari' },
+    {
+      code: 'hi',
+      name: 'Hindi',
+      nativeName: 'हिंदी',
+      flag: '🇮🇳',
+      dir: 'ltr',
+      font: 'Noto Sans Devanagari',
+    },
     { code: 'es', name: 'Spanish', nativeName: 'Español', flag: '🇪🇸', dir: 'ltr', font: 'Inter' },
     { code: 'fr', name: 'French', nativeName: 'Français', flag: '🇫🇷', dir: 'ltr', font: 'Inter' },
-    { code: 'ar', name: 'Arabic', nativeName: 'العربية', flag: '🇸🇦', dir: 'rtl', font: 'Noto Sans Arabic' },
-    { code: 'bn', name: 'Bengali', nativeName: 'বাংলা', flag: '🇧🇩', dir: 'ltr', font: 'Noto Sans Bengali' },
-    { code: 'pt', name: 'Portuguese', nativeName: 'Português', flag: '🇧🇷', dir: 'ltr', font: 'Inter' },
-    { code: 'zh', name: 'Mandarin', nativeName: '中文', flag: '🇨🇳', dir: 'ltr', font: 'Noto Sans SC' },
+    {
+      code: 'ar',
+      name: 'Arabic',
+      nativeName: 'العربية',
+      flag: '🇸🇦',
+      dir: 'rtl',
+      font: 'Noto Sans Arabic',
+    },
+    {
+      code: 'bn',
+      name: 'Bengali',
+      nativeName: 'বাংলা',
+      flag: '🇧🇩',
+      dir: 'ltr',
+      font: 'Noto Sans Bengali',
+    },
+    {
+      code: 'pt',
+      name: 'Portuguese',
+      nativeName: 'Português',
+      flag: '🇧🇷',
+      dir: 'ltr',
+      font: 'Inter',
+    },
+    {
+      code: 'zh',
+      name: 'Mandarin',
+      nativeName: '中文',
+      flag: '🇨🇳',
+      dir: 'ltr',
+      font: 'Noto Sans SC',
+    },
   ],
   RTL_LANGUAGES: ['ar'],
   default: {},
 }));
 
 vi.mock('dompurify', () => ({
-  default: { sanitize: (v) => v },
+  default: { sanitize: v => v },
 }));
 
 import HomePage from '../pages/HomePage';
@@ -152,7 +187,7 @@ describe('Accessibility', () => {
     it('every checkbox has an associated label element', () => {
       render(<ChecklistPage />);
       const checkboxes = screen.getAllByRole('checkbox');
-      checkboxes.forEach((cb) => {
+      checkboxes.forEach(cb => {
         expect(cb.id).toBeTruthy();
         const label = document.querySelector(`label[for="${cb.id}"]`);
         expect(label).not.toBeNull();
@@ -172,9 +207,7 @@ describe('Accessibility', () => {
 
     pages.forEach(({ name, Component, needsRouter }) => {
       it(`${name} page has no axe violations`, async () => {
-        const { container } = needsRouter
-          ? renderWithRouter(<Component />)
-          : render(<Component />);
+        const { container } = needsRouter ? renderWithRouter(<Component />) : render(<Component />);
         const results = await axe.run(container, AXE_OPTS);
         expect(results.violations).toHaveLength(0);
       });

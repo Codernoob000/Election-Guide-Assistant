@@ -37,7 +37,7 @@
   position: relative;
 }
 
-[dir="rtl"] .timeline__item {
+[dir='rtl'] .timeline__item {
   flex-direction: row-reverse;
 }
 
@@ -125,8 +125,14 @@
 }
 
 @keyframes detailsFadeIn {
-  from { opacity: 0; max-height: 0; }
-  to { opacity: 1; max-height: 500px; }
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+  }
 }
 
 .timeline__expand-btn {
@@ -145,8 +151,17 @@
 }
 
 @media (max-width: 768px) {
-  .timeline-page { padding: 2rem 1rem; }
-  .timeline__connector { width: 2.5rem; }
-  .timeline__dot { width: 2.5rem; height: 2.5rem; }
-  .timeline__item { gap: 1rem; }
+  .timeline-page {
+    padding: 2rem 1rem;
+  }
+  .timeline__connector {
+    width: 2.5rem;
+  }
+  .timeline__dot {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .timeline__item {
+    gap: 1rem;
+  }
 }

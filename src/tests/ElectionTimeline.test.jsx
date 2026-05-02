@@ -4,7 +4,7 @@ import { TIMELINE_STAGES } from '../data/constants';
 
 vi.mock('react-i18next', () => ({
   useTranslation: () => ({
-    t: (key) => key,
+    t: key => key,
     i18n: { language: 'en', changeLanguage: vi.fn() },
   }),
 }));
@@ -22,7 +22,7 @@ describe('TimelinePage (ElectionTimeline)', () => {
 
     it('each stage title is visible', () => {
       render(<TimelinePage />);
-      TIMELINE_STAGES.forEach((stage) => {
+      TIMELINE_STAGES.forEach(stage => {
         expect(screen.getByText(`timeline.stages.${stage.id}.title`)).toBeInTheDocument();
       });
     });
@@ -63,14 +63,14 @@ describe('TimelinePage (ElectionTimeline)', () => {
 
     it('each stage shows its period text', () => {
       render(<TimelinePage />);
-      TIMELINE_STAGES.forEach((stage) => {
+      TIMELINE_STAGES.forEach(stage => {
         expect(screen.getByText(`timeline.stages.${stage.id}.period`)).toBeInTheDocument();
       });
     });
 
     it('each stage shows its description', () => {
       render(<TimelinePage />);
-      TIMELINE_STAGES.forEach((stage) => {
+      TIMELINE_STAGES.forEach(stage => {
         expect(screen.getByText(`timeline.stages.${stage.id}.description`)).toBeInTheDocument();
       });
     });
@@ -82,14 +82,14 @@ describe('TimelinePage (ElectionTimeline)', () => {
       expect(TIMELINE_STAGES).toHaveLength(8);
       render(<TimelinePage />);
       const stageNumbers = ['01', '02', '03', '04', '05', '06', '07', '08'];
-      stageNumbers.forEach((num) => {
+      stageNumbers.forEach(num => {
         expect(screen.getByText(num)).toBeInTheDocument();
       });
     });
 
     it('stage titles use i18n keys matching stage IDs', () => {
       render(<TimelinePage />);
-      TIMELINE_STAGES.forEach((stage) => {
+      TIMELINE_STAGES.forEach(stage => {
         const expectedKey = `timeline.stages.${stage.id}.title`;
         expect(screen.getByText(expectedKey)).toBeInTheDocument();
       });

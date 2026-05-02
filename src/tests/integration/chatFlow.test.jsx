@@ -1,5 +1,5 @@
-import { describe, it, expect, vi, beforeEach, beforeAll, afterEach, afterAll } from 'vitest';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { describe, it, expect, vi, beforeEach, afterEach, beforeAll, afterAll } from 'vitest';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { server } from '../mocks/server';
 
@@ -24,12 +24,12 @@ vi.mock('../../services/translateService', () => ({
 }));
 
 vi.mock('dompurify', () => ({
-  default: { sanitize: (v) => v },
+  default: { sanitize: v => v },
 }));
 
 vi.mock('react-i18next', () => ({
   useTranslation: () => ({
-    t: (key) => {
+    t: key => {
       const map = {
         'chat.title': 'ElectionBot Chat',
         'chat.placeholder': 'Ask about elections...',
@@ -114,7 +114,8 @@ describe('Chat Flow Integration', () => {
     it('input is disabled while loading', async () => {
       // Make gemini hang to simulate loading
       mockSendMessageToGemini.mockImplementation(
-        () => new Promise((resolve) => setTimeout(() => resolve({ text: 'ok', isOffTopic: false }), 500))
+        () =>
+          new Promise(resolve => setTimeout(() => resolve({ text: 'ok', isOffTopic: false }), 500))
       );
 
       render(<ChatPage />);

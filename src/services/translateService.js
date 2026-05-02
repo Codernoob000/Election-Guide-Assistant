@@ -1,3 +1,5 @@
+import { TRANSLATE_API_URL } from '../utils/constants';
+
 /**
  * Google Translate API Service
  * Translates chat responses to the user's selected language.
@@ -7,7 +9,7 @@
  */
 
 const TRANSLATE_API_KEY = import.meta.env.VITE_GOOGLE_TRANSLATE_API_KEY;
-const TRANSLATE_API_URL = 'https://translation.googleapis.com/language/translate/v2';
+// We use the URL from constants.js for consistency and maintainability
 
 /**
  * Translate text to a target language using Google Translate API.
@@ -22,6 +24,7 @@ export async function translateText(text, targetLang, sourceLang = 'en') {
   }
 
   if (!TRANSLATE_API_KEY) {
+    // If no key is provided, we return the original text to prevent app crash
     return { translatedText: text, detectedSourceLang: sourceLang };
   }
 
@@ -49,7 +52,11 @@ export async function translateText(text, targetLang, sourceLang = 'en') {
       detectedSourceLang: translation?.detectedSourceLanguage || sourceLang,
     };
   } catch (error) {
-    /* Translation failed gracefully — return original text */
+    // Wrap console error in dev check as per quality guidelines
+    if (import.meta.env.DEV) {
+      console.error('Translation error:', error); // eslint-disable-line no-console
+    }
+    /* Translation failed gracefully — return original text to maintain user experience */
     return { translatedText: text, detectedSourceLang: sourceLang };
   }
 }

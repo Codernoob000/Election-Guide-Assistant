@@ -4,6 +4,10 @@ import { useChat } from '../hooks/useChat';
 import DOMPurify from 'dompurify';
 import './ChatPage.css';
 
+/**
+ * @description Interactive chat interface for election queries
+ * @returns {JSX.Element} ChatPage component
+ */
 export default function ChatPage() {
   const { t, i18n } = useTranslation();
   const { messages, isLoading, sendMessage, clearChat } = useChat(i18n.language);
@@ -11,6 +15,7 @@ export default function ChatPage() {
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
 
+  // Pre-defined question chips for user convenience
   const quickChips = [
     'howToRegister',
     'whatIsElectoralCollege',
@@ -20,11 +25,16 @@ export default function ChatPage() {
     'primaryVsCaucus',
   ];
 
+  // Auto-scroll to the bottom of the chat when new messages arrive
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isLoading]);
 
-  const handleSubmit = (e) => {
+  /**
+   * @description Handles the chat form submission
+   * @param {Event} e - Form submission event
+   */
+  const handleSubmit = e => {
     e.preventDefault();
     if (input.trim() && !isLoading) {
       sendMessage(input);
@@ -32,7 +42,11 @@ export default function ChatPage() {
     }
   };
 
-  const handleChipClick = (chipKey) => {
+  /**
+   * @description Handles clicking on a quick chip
+   * @param {string} chipKey - The key for the translated chip text
+   */
+  const handleChipClick = chipKey => {
     const chipText = t(`chat.quickChips.${chipKey}`);
     sendMessage(chipText);
   };
@@ -43,7 +57,11 @@ export default function ChatPage() {
         <div className="chat-page__header">
           <h1 className="chat-page__title">{t('chat.title')}</h1>
           {messages.length > 0 && (
-            <button className="chat-page__clear-btn" onClick={clearChat} aria-label={t('accessibility.newChat')}>
+            <button
+              className="chat-page__clear-btn"
+              onClick={clearChat}
+              aria-label={t('accessibility.newChat')}
+            >
               {t('accessibility.newChat')}
             </button>
           )}
@@ -55,7 +73,7 @@ export default function ChatPage() {
               <div className="chat-welcome__icon">🗳️</div>
               <p className="chat-welcome__text">{t('chat.welcome')}</p>
               <div className="chat-chips">
-                {quickChips.map((chip) => (
+                {quickChips.map(chip => (
                   <button
                     key={chip}
                     className="chat-chip"
@@ -69,11 +87,9 @@ export default function ChatPage() {
             </div>
           )}
 
-          {messages.map((msg) => (
+          {messages.map(msg => (
             <div key={msg.id} className={`chat-message chat-message--${msg.role}`}>
-              <div className="chat-message__avatar">
-                {msg.role === 'user' ? '👤' : '🤖'}
-              </div>
+              <div className="chat-message__avatar">{msg.role === 'user' ? '👤' : '🤖'}</div>
               <div className="chat-message__content">
                 {msg.isError ? (
                   <p className="chat-message__error">{t('chat.error')}</p>
@@ -81,10 +97,10 @@ export default function ChatPage() {
                   <div
                     className="chat-message__text"
                     dangerouslySetInnerHTML={{
-                      __html: DOMPurify.sanitize(
-                        msg.text.replace(/\n/g, '<br/>'),
-                        { ALLOWED_TAGS: ['br', 'b', 'i', 'strong', 'em', 'p', 'ul', 'ol', 'li'] }
-                      ),
+                      // We sanitize the HTML content to prevent XSS while allowing specific formatting tags
+                      __html: DOMPurify.sanitize(msg.text.replace(/\n/g, '<br/>'), {
+                        ALLOWED_TAGS: ['br', 'b', 'i', 'strong', 'em', 'p', 'ul', 'ol', 'li'],
+                      }),
                     }}
                   />
                 )}
@@ -103,7 +119,9 @@ export default function ChatPage() {
               <div className="chat-message__avatar">🤖</div>
               <div className="chat-message__content">
                 <div className="chat-typing">
-                  <span /><span /><span />
+                  <span />
+                  <span />
+                  <span />
                 </div>
               </div>
             </div>
@@ -119,7 +137,7 @@ export default function ChatPage() {
             type="text"
             className="chat-input"
             value={input}
-            onChange={(e) => setInput(e.target.value)}
+            onChange={e => setInput(e.target.value)}
             placeholder={t('chat.placeholder')}
             aria-label={t('accessibility.chatInput')}
             disabled={isLoading}

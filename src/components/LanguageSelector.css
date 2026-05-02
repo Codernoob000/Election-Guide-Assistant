@@ -58,14 +58,20 @@
   animation: dropdownFadeIn 0.2s ease;
 }
 
-[dir="rtl"] .language-selector__dropdown {
+[dir='rtl'] .language-selector__dropdown {
   right: auto;
   left: 0;
 }
 
 @keyframes dropdownFadeIn {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .language-selector__option {

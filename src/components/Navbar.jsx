@@ -1,11 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 import LanguageSelector from './LanguageSelector';
 import { useTheme } from '../hooks/useTheme';
 import './Navbar.css';
 
+/**
+ * @description Application navigation bar with theme and language toggles
+ * @returns {JSX.Element} Navbar component
+ */
 export default function Navbar() {
   const { t } = useTranslation();
   const { theme, toggleTheme } = useTheme();
@@ -29,7 +32,7 @@ export default function Navbar() {
         </Link>
 
         <div className={`navbar__links ${mobileOpen ? 'open' : ''}`}>
-          {navLinks.map((link) => (
+          {navLinks.map(link => (
             <Link
               key={link.to}
               to={link.to}
@@ -50,6 +53,7 @@ export default function Navbar() {
             aria-label={t('accessibility.themeToggle')}
             title={theme === 'dark' ? t('theme.light') : t('theme.dark')}
           >
+            {/* Toggle between sun and moon icons based on current theme */}
             {theme === 'dark' ? '☀️' : '🌙'}
           </button>
           <button
@@ -58,7 +62,9 @@ export default function Navbar() {
             aria-label={mobileOpen ? t('accessibility.closeMenu') : t('accessibility.openMenu')}
           >
             <span className={`hamburger ${mobileOpen ? 'open' : ''}`}>
-              <span /><span /><span />
+              <span />
+              <span />
+              <span />
             </span>
           </button>
         </div>

@@ -2,9 +2,14 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import './HomePage.css';
 
+/**
+ * @description Main landing page for the Election Guide Assistant
+ * @returns {JSX.Element} HomePage component
+ */
 export default function HomePage() {
   const { t } = useTranslation();
 
+  // Feature cards data with associated icons and design gradients
   const features = [
     { key: 'chat', icon: '💬', gradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)' },
     { key: 'timeline', icon: '📅', gradient: 'linear-gradient(135deg, #ec4899, #f43f5e)' },
@@ -28,6 +33,7 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
+        {/* Visual elements for the hero section, including decorative orbs and floating emoji */}
         <div className="hero__visual">
           <div className="hero__orb hero__orb--1" />
           <div className="hero__orb hero__orb--2" />
@@ -39,7 +45,7 @@ export default function HomePage() {
       <section className="features">
         <h2 className="features__title">{t('home.features.title')}</h2>
         <div className="features__grid">
-          {features.map((f) => (
+          {features.map(f => (
             <div className="feature-card" key={f.key}>
               <div className="feature-card__icon" style={{ background: f.gradient }}>
                 {f.icon}

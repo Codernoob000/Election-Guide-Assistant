@@ -5,7 +5,7 @@ import { renderHook, act } from '@testing-library/react';
 const mockSendMessageToGemini = vi.fn();
 const mockTranslateText = vi.fn();
 
-vi.mock('dompurify', () => ({ default: { sanitize: (v) => v } }));
+vi.mock('dompurify', () => ({ default: { sanitize: v => v } }));
 vi.mock('../services/geminiService', () => ({
   sendMessageToGemini: (...a) => mockSendMessageToGemini(...a),
 }));
@@ -33,7 +33,9 @@ describe('useChat hook (ChatContext logic)', () => {
 
     it('sendMessage adds user message with role and timestamp', async () => {
       const { result } = renderHook(() => useChat('en'));
-      await act(async () => { await result.current.sendMessage('Hello'); });
+      await act(async () => {
+        await result.current.sendMessage('Hello');
+      });
       const userMsg = result.current.messages[0];
       expect(userMsg.role).toBe('user');
       expect(userMsg.text).toBe('Hello');
@@ -42,7 +44,9 @@ describe('useChat hook (ChatContext logic)', () => {
 
     it('sendMessage adds bot response after user message', async () => {
       const { result } = renderHook(() => useChat('en'));
-      await act(async () => { await result.current.sendMessage('Hi'); });
+      await act(async () => {
+        await result.current.sendMessage('Hi');
+      });
       expect(result.current.messages).toHaveLength(2);
       expect(result.current.messages[1].role).toBe('bot');
       expect(result.current.messages[1].text).toBe('Bot reply');
@@ -50,15 +54,21 @@ describe('useChat hook (ChatContext logic)', () => {
 
     it('clearChat resets messages to empty array', async () => {
       const { result } = renderHook(() => useChat('en'));
-      await act(async () => { await result.current.sendMessage('Hi'); });
+      await act(async () => {
+        await result.current.sendMessage('Hi');
+      });
       expect(result.current.messages.length).toBeGreaterThan(0);
-      act(() => { result.current.clearChat(); });
+      act(() => {
+        result.current.clearChat();
+      });
       expect(result.current.messages).toEqual([]);
     });
 
     it('loading is false after sendMessage completes', async () => {
       const { result } = renderHook(() => useChat('en'));
-      await act(async () => { await result.current.sendMessage('Hi'); });
+      await act(async () => {
+        await result.current.sendMessage('Hi');
+      });
       expect(result.current.isLoading).toBe(false);
     });
   });
@@ -68,8 +78,10 @@ describe('useChat hook (ChatContext logic)', () => {
     it('error message added when Gemini throws, loading resets', async () => {
       mockSendMessageToGemini.mockRejectedValueOnce(new Error('fail'));
       const { result } = renderHook(() => useChat('en'));
-      await act(async () => { await result.current.sendMessage('Hi'); });
-      const err = result.current.messages.find((m) => m.isError);
+      await act(async () => {
+        await result.current.sendMessage('Hi');
+      });
+      const err = result.current.messages.find(m => m.isError);
       expect(err).toBeTruthy();
       expect(err.role).toBe('bot');
       expect(result.current.isLoading).toBe(false);
@@ -77,15 +89,19 @@ describe('useChat hook (ChatContext logic)', () => {
 
     it('empty / whitespace input is ignored', async () => {
       const { result } = renderHook(() => useChat('en'));
-      await act(async () => { await result.current.sendMessage('   '); });
+      await act(async () => {
+        await result.current.sendMessage('   ');
+      });
       expect(result.current.messages).toEqual([]);
       expect(mockSendMessageToGemini).not.toHaveBeenCalled();
     });
 
     it('bot message stores originalText from Gemini', async () => {
       const { result } = renderHook(() => useChat('es'));
-      await act(async () => { await result.current.sendMessage('Hola'); });
-      const bot = result.current.messages.find((m) => m.role === 'bot');
+      await act(async () => {
+        await result.current.sendMessage('Hola');
+      });
+      const bot = result.current.messages.find(m => m.role === 'bot');
       expect(bot.originalText).toBe('Bot reply');
     });
   });
@@ -94,28 +110,38 @@ describe('useChat hook (ChatContext logic)', () => {
   describe('Integration', () => {
     it('calls geminiService with growing conversation history', async () => {
       const { result } = renderHook(() => useChat('en'));
-      await act(async () => { await result.current.sendMessage('First'); });
-      await act(async () => { await result.current.sendMessage('Second'); });
+      await act(async () => {
+        await result.current.sendMessage('First');
+      });
+      await act(async () => {
+        await result.current.sendMessage('Second');
+      });
       const historyArg = mockSendMessageToGemini.mock.calls[1][1];
       expect(historyArg.length).toBeGreaterThan(0);
     });
 
     it('calls translateService when language is not en', async () => {
       const { result } = renderHook(() => useChat('es'));
-      await act(async () => { await result.current.sendMessage('Hi'); });
+      await act(async () => {
+        await result.current.sendMessage('Hi');
+      });
       expect(mockTranslateText).toHaveBeenCalledWith('Bot reply', 'es', 'en');
     });
 
     it('does NOT call translateService when language is en', async () => {
       const { result } = renderHook(() => useChat('en'));
-      await act(async () => { await result.current.sendMessage('Hi'); });
+      await act(async () => {
+        await result.current.sendMessage('Hi');
+      });
       expect(mockTranslateText).not.toHaveBeenCalled();
     });
 
     it('translated response has wasTranslated flag', async () => {
       const { result } = renderHook(() => useChat('es'));
-      await act(async () => { await result.current.sendMessage('Hi'); });
-      const bot = result.current.messages.find((m) => m.role === 'bot');
+      await act(async () => {
+        await result.current.sendMessage('Hi');
+      });
+      const bot = result.current.messages.find(m => m.role === 'bot');
       expect(bot.wasTranslated).toBe(true);
       expect(bot.text).toBe('Respuesta');
     });
